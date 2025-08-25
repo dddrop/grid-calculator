@@ -1,0 +1,44 @@
+# Grid trading strategy configuration file
+
+# Basic configuration
+[base]
+initial_price = 100.0
+grid_type = "fixed"  # "fixed" or "average"
+
+# Grid configuration
+[grid]
+# List of grid percentages
+levels = [1.0, 2.0, 3.0, 5.0, 8.0, 13.0, 21.0]
+
+# Position sizing strategy
+[position]
+mode = "current-multiple"  # "fixed", "current-multiple", "increment-multiple"
+base_size = 100.0
+multiplier = 2.0  # Only used in multiple modes
+
+# Optional: Multiple strategy configuration examples
+[[strategies]]
+name = "保守策略"
+initial_price = 100.0
+grid_type = "fixed"
+levels = [1.0, 2.0, 3.0]
+position_mode = "fixed"
+base_size = 100.0
+
+[[strategies]]
+name = "激进策略"
+initial_price = 100.0
+grid_type = "average"
+levels = [2.0, 4.0, 8.0, 16.0]
+position_mode = "current-multiple"
+base_size = 100.0
+multiplier = 3.0
+
+[[strategies]]
+name = "均衡策略"
+initial_price = 100.0
+grid_type = "fixed"
+levels = [1.0, 2.0, 3.0, 5.0, 8.0]
+position_mode = "increment-multiple"
+base_size = 100.0
+multiplier = 1.5

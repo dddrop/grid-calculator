@@ -1,0 +1,11 @@
+[base]
+initial_price = 100.0
+grid_type = "average"
+
+[grid]
+levels = [1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0]
+
+[position]
+mode = "current-multiple"
+base_size = 100.0
+multiplier = 2.0
